@@ -1,10 +1,12 @@
-import "./styles.css";
+import Header from './components/header.js';
+import './App.css';
 
-export default function App() {
+function App() {
   return (
     <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+      <Header></Header>
     </div>
   );
 }
+
+export default App;

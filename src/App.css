@@ -74,3 +74,17 @@ header{
   text-align: center;
   color: #FFFFFF;
 }
+
+.GridElement{
+  position: relative;
+  float:left;
+  display: block;
+  width: 88px;
+  height: 88px;
+  line-height: 88px;
+  text-align: center;
+  color: white;
+  border-radius: 3px;
+  margin: 15px;
+  background: #eee4da59;
+}

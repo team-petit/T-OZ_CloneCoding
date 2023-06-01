@@ -3,12 +3,15 @@
 }
 
 header{
-  position: absolute;
-  width: 700px;
-  height: 175px;
-  left: 370px;
-  top: 45px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
 
+.headcontainer{
+  position: absolute;
+  width: 500px;
+  height: 175px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
@@ -16,21 +19,22 @@ header{
 
 .title{
   margin: 0;
-  font-size: 120px;
+  font-size: 80px;
   line-height: 145px;
-
+  border-radius: 3px;
   color: #746E66;
 }
 
 .score{
   position: absolute;
   padding-top: 5px;
-  right: 0;
-  top: 0;
+  top: 45px;
+  right: 135px;
   background: #B7ADA2;
-  width: 135px;
-  height: 70px;
-  
+  width: 130px;
+  height: 55px;
+  border-radius: 3px;
+
   font-size: 15px;
   line-height: 20px;
   text-align: center;
@@ -40,11 +44,12 @@ header{
 .best{
   position: absolute;
   padding-top: 5px;
-  right: 157px;
-  top: 0;
+  right: 0;
+  top: 45px;
   background: #B7ADA2;
-  width: 135px;
-  height: 70px;
+  width: 130px;
+  height: 55px;
+  border-radius: 3px;
 
   font-size: 15px;
   line-height: 20px;
@@ -53,12 +58,15 @@ header{
 }
 
 .restart{
+  color: #f9f6f2;
+  height: 40px;
+  line-height: 42px;
+  cursor: pointer;
+  background: #8f7a66;
+  border-radius: 3px;
+  padding: 0 20px;
   position: absolute;
-  width: 200px;
-  height: 60px;
   right: 0;
-  bottom: 0;
-  background: #897B69;
 
   font-weight: 700;
   font-size: 20px;

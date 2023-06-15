@@ -79,12 +79,14 @@ header{
   position: relative;
   float:left;
   display: block;
-  width: 88px;
-  height: 88px;
-  line-height: 88px;
+  width: 106.25px;
+  height: 106.25px;
+  line-height: 106.25px;
   text-align: center;
   color: white;
   border-radius: 3px;
-  margin: 15px;
+  font-size: 40px;
+  font-weight: 500;
+  margin: 15px 0 0 15px;
   background: #eee4da59;
 }

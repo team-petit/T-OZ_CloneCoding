@@ -1,0 +1,68 @@
+.tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: #cdc1b4;
+    color: #776e65;
+    margin: 5px;
+    border-radius: 3px;
+  }
+  
+  .tile-2 {
+    background-color: #eee4da;
+    color: #776e65;
+  }
+  
+  .tile-4 {
+    background-color: #ede0c8;
+    color: #776e65;
+  }
+  
+  .tile-8 {
+    background-color: #f2b179;
+    color: white;
+  }
+  
+  .tile-16 {
+    background-color: #f59563;
+    color: white;
+  }
+  
+  .tile-32 {
+    background-color: #f67c5f;
+    color: white;
+  }
+  
+  .tile-64 {
+    background-color: #f65e3b;
+    color: white;
+  }
+  
+  .tile-128 {
+    background-color: #edcf72;
+    color: white;
+  }
+  
+  .tile-256 {
+    background-color: #edcc61;
+    color: white;
+  }
+  
+  .tile-512 {
+    background-color: #edc850;
+    color: white;
+  }
+  
+  .tile-1024 {
+    background-color: #edc53f;
+    color: white;
+  }
+  
+  .tile-2048 {
+    background-color: #edc22e;
+    color: white;
+  }  

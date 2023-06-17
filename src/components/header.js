@@ -1,6 +1,8 @@
+// Header.js
+
 import React from 'react';
 
-const Header = ({ onRestart }) => {
+const Header = ({ onRestart, score, bestScore }) => {
   const handleRestart = () => {
     if (typeof onRestart === 'function') {
       onRestart();
@@ -11,8 +13,12 @@ const Header = ({ onRestart }) => {
     <header>
       <div className="headcontainer">
         <h1 className="title">2048</h1>
-        <div className="score">score</div>
-        <div className="best">best</div>
+        <div className="score">
+          Score: <span>{score}</span>
+        </div>
+        <div className="best">
+          Best: <span>{bestScore}</span>
+        </div>
         <button className="restart" onClick={handleRestart}>
           New Game
         </button>

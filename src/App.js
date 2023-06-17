@@ -49,9 +49,24 @@ const initializeBoard = () => {
   return newBoard;
 };
 
+const calculateScore = (board) => {
+  let totalScore = 0;
+
+  // 보드 타일의 합을 계산
+  for (let row = 0; row < 4; row++) {
+    for (let col = 0; col < 4; col++) {
+      totalScore += board[row][col];
+    }
+  }
+
+  return totalScore;
+};
+
 const App = () => {
   const [gameOver, setGameOver] = useState(false);
   const [board, setBoard] = useState(initializeBoard());
+  const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
 
   const moveLeft = () => {
     const newBoard = board.map(row => [...row]);
@@ -181,9 +196,6 @@ const App = () => {
 
   useEffect(() => {
     const checkGameOver = () => {
-      // 게임 오버 여부 확인 로직을 구현하세요
-      // 이중 반복문을 사용하여 각 타일을 검사하고, 더 이상 이동할 수 없는 경우 setGameOver(true)를 호출하세요
-      // 모든 타일을 검사한 후에 setGameOver(false)를 호출하세요
       let isGameOver = true;
       for (let row = 0; row < 4; row++) {
         for (let col = 0; col < 4; col++) {
@@ -210,11 +222,20 @@ const App = () => {
   const handleRestart = () => {
     setGameOver(false);
     setBoard(initializeBoard());
+    setScore(0);
   };
+
+  useEffect(() => {
+    const updatedScore = calculateScore(board);
+    setScore(updatedScore);
+    if (updatedScore > bestScore) {
+      setBestScore(updatedScore);
+    }
+  }, [board]);
 
   return (
     <div className="app-container">
-      <Header onRestart={handleRestart}/>
+      <Header onRestart={handleRestart} score={score} bestScore={bestScore} />
       <Board
         board={board}
         moveLeft={moveLeft}

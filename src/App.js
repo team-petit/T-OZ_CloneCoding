@@ -3,6 +3,8 @@ import Board from './components/Board';
 import Header from './components/Header';
 import GameOverMessage from './components/GameOverMessage';
 import "./App.css";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 
 const placeRandomTile = (board) => {
   const emptyTiles = [];
@@ -66,7 +68,7 @@ const App = () => {
   const [gameOver, setGameOver] = useState(false);
   const [board, setBoard] = useState(initializeBoard());
   const [score, setScore] = useState(0);
-  const [bestScore, setBestScore] = useState(0);
+  const [bestScore, setBestScore] = useState();
 
   const moveLeft = () => {
     const newBoard = board.map(row => [...row]);
@@ -229,9 +231,20 @@ const App = () => {
     const updatedScore = calculateScore(board);
     setScore(updatedScore);
     if (updatedScore > bestScore) {
+      // firebase 저장 기능
+      const db = firebase.firestore();
+      db.collection('scoreboard').doc("scores").update({"bestscore" : updatedScore});
       setBestScore(updatedScore);
     }
   }, [board]);
+
+  useEffect(() => {
+    const db = firebase.firestore();
+    db.collection('scoreboard').get().then((result)=>{
+      result.forEach((doc)=>{
+      setBestScore(Object.values(doc.data())[0]);
+      })
+  })},[]);
 
   return (
     <div className="app-container">

@@ -1,6 +1,7 @@
 // GameOverMessage.js
 
 import React from 'react';
+import '../Board.css';
 
 const GameOverMessage = ({ onRestart }) => {
   const handleRestart = () => {
@@ -12,9 +13,9 @@ const GameOverMessage = ({ onRestart }) => {
   return (
     <div className="game-over-message">
       <h2>Game Over</h2>
-      <button onClick={handleRestart}>try again</button>
+      <button className="restart-button" onClick={handleRestart}>try again</button>
     </div>
-  );
+  );  
 };
 
 export default GameOverMessage;

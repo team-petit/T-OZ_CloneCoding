@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import "../Board.css";
 import Grid from './Grid';
 
 const Board = ({ board, gameOver, initializeBoard, moveUp, moveDown, moveLeft, moveRight }) => {
@@ -23,7 +24,7 @@ const Board = ({ board, gameOver, initializeBoard, moveUp, moveDown, moveLeft, m
   }, [moveUp, moveDown, moveLeft, moveRight]);
 
   return (
-    <div className="board">
+    <div className="boards">
       <Grid board={board} />
     </div>
   );
